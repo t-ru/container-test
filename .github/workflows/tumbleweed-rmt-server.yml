@@ -17,9 +17,14 @@ jobs:
       - name: Buildah
         uses: redhat-actions/buildah-build@v2
         with:
+          id: build-image
           # The base image to use to create a new container image
           base-image: registry.opensuse.org/opensuse/tumbleweed:latest
           image: my-new-image
+          tags: >-
+            ${{ github.sha }}
+            "${{ github.run_number }}
+            latest
            
       #Check if image is build
       - name: Check images created
