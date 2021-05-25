@@ -23,7 +23,7 @@ jobs:
           image: my-new-image
           tags: >-
             ${{ github.sha }}
-            "${{ github.run_number }}
+            ${{ github.run_number }}
             latest
            
       #Check if image is build
