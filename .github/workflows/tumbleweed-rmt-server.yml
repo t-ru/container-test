@@ -20,4 +20,9 @@ jobs:
           # The base image to use to create a new container image
           base-image: registry.opensuse.org/opensuse/tumbleweed:latest
           image: my-new-image
+        
+        # Check if image is build
+        - name: Check images created
+        run: buildah images my-new-image
+        
           
