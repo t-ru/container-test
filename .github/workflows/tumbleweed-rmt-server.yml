@@ -28,4 +28,7 @@ jobs:
       - name: test
         run: echo "${{ github.run_number }}"
         
+      - name: test 2
+        run: echo "${{ github.sha }}"
+        
           
