@@ -25,4 +25,7 @@ jobs:
       - name: Check images created
         run: buildah images
         
+      - name: test
+        run: echo "${{ github.run_number }}"
+        
           
