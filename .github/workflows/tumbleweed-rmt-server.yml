@@ -19,4 +19,5 @@ jobs:
         with:
           # The base image to use to create a new container image
           base-image: registry.opensuse.org/opensuse/tumbleweed:latest
+          image: my-new-image
           
