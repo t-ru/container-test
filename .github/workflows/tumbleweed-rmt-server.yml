@@ -37,7 +37,7 @@ jobs:
         run: echo "${{ github.sha }}" 
         
       - name: tags
-        run: echo "${{ steps.build-image.outputs.tags }}"
+        run: echo "${{ steps.build-image.tags }}"
         
       - name: image
         run: echo "${{ steps.build-image.outputs.image }}"
