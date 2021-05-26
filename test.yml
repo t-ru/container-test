@@ -1,0 +1,53 @@
+name: test
+
+on:
+
+  workflow_dispatch:
+  
+  #schedule:
+  #  - cron: '0 0 * * *'  # every day at midnight
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - name: Buildah
+        uses: redhat-actions/buildah-build@v2
+        with:
+          id: build-image
+          # The base image to use to create a new container image
+          base-image: registry.opensuse.org/opensuse/tumbleweed:latest
+          image: ${{ github.workflow }}
+          tags: >-
+            ${{ github.sha }}
+            ${{ github.run_number }}
+            latest
+           
+      #Check if image is build
+      - name: Check images created
+        run: buildah images
+        
+      - name: test
+        run: echo "${{ github.run_number }}"
+        
+      - name: test 2
+        run: echo "${{ github.sha }}" 
+        
+      - name: tags
+        run: echo "${{ steps.build-image.tags }}"
+        
+      - name: image
+        run: echo "${{ steps.build-image.outputs.image }}"
+              
+      - name: Push To ghcr.io
+        id: push-to-ghcr
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: ${{ github.workflow }}
+          tags: latest ${{ github.run_number }} ${{ github.sha }}
+          registry: ghcr.io/${{ github.repository_owner }}/container-images
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_TOKEN }}
