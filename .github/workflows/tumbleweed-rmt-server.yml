@@ -49,6 +49,6 @@ jobs:
           image: ${{ github.workflow }}
           tags: latest ${{ github.run_number }} ${{ github.sha }}
           registry: ghcr.io/${{ github.repository_owner }}
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
