@@ -36,11 +36,11 @@ jobs:
       - name: test 2
         run: echo "${{ github.sha }}" 
         
-      - name: repo owner
-        run: echo "${{ github.repository_owner }}"
+      - name: tags
+        run: echo "${{ steps.build-image.outputs.tags }}"
         
-      - name: actor
-        run: echo "${{ github.actor }}"
+      - name: image
+        run: echo "${{ steps.build-image.outputs.image }}"
               
       - name: Push To quay.io
         id: push-to-ghcr
