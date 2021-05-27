@@ -1,0 +1,26 @@
+name: tumbleweed-rmt-server
+
+on:
+
+  workflow_dispatch:
+  
+  #schedule:
+  #  - cron: '0 0 * * *'  # every day at midnight
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+       #Check if image is build
+      - name: Check 1
+        run: python
+           
+      #Check if image is build
+      - name: Check 2
+        run: pip
+  
+        
+      
