@@ -16,7 +16,7 @@ jobs:
     steps:
     
       - name: Install ansible
-        run: apt install -y ansible
+        run: sudo apt install -y ansible
     
       - name: Install ansible-bender
         run: pip3 install ansible-bender
