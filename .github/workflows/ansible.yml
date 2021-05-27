@@ -16,11 +16,11 @@ jobs:
     
        #Check if image is build
       - name: Check 1
-        run: python
+        run: python --version
            
       #Check if image is build
       - name: Check 2
-        run: pip
+        run: pip --version
   
         
       
