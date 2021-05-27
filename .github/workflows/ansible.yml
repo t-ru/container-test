@@ -10,10 +10,13 @@ on:
 jobs:
 
   build:
+    
     runs-on: ubuntu-latest
 
-
     steps:
+    
+      - name: Install ansible
+        run: apt install -y ansible
     
       - name: Install ansible-bender
         run: pip3 install ansible-bender
