@@ -14,13 +14,21 @@ jobs:
 
     steps:
     
-       #Check if image is build
       - name: Check 1
         run: python --version
            
-      #Check if image is build
       - name: Check 2
         run: pip --version
+      
+      - name: Check 3
+        run: whoami
+
+      - name: Check 4
+        run: ansible
+
+        
+      
+        
   
         
       
