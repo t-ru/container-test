@@ -12,23 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+
     steps:
     
-      - name: Check 1
-        run: python --version
-           
-      - name: Check 2
-        run: pip --version
-      
-      - name: Check 3
-        run: pip3 --version
-      
-      - name: Check 3
-        run: whoami
-
-      #- name: Check 4
-      #  run: ansible
-
+      - name: Install ansible-bender
+        run: pip3 install ansible-bender
         
       
         
