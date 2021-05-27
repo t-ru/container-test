@@ -17,6 +17,10 @@ jobs:
     
       - name: Install ansible-bender
         run: pip3 install ansible-bender
+      
+      - name: sudo ls /
+        run: sudo ls /
+        
         
       
         
