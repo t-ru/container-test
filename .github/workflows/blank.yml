@@ -36,5 +36,4 @@ jobs:
           echo test, and deploy your project.
           pwd
           ls
-          echo "${{ steps.build-image.tags }}"
-          echo "GITHUB_WORKSPACE: ${{ GITHUB_WORKSPACE }}" 
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE" 
